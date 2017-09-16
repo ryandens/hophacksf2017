@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    <p>hi</p>
+    <div id="ng-view" ng-view class=""></div>
   </body>
   <!-- Scripts -->
   <script src="/node_modules/angular/angular.min.js"></script>
+  <script src="/node_modules/angular-route/angular-route.min.js"></script>
+  <script src="/views/weekly_view/weekly_view.js"></script>
+  <script src="/index.js"></script>
 </html>
