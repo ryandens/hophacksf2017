@@ -2,14 +2,25 @@
 <html ng-app="app">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
     <title></title>
   </head>
   <body>
     <div id="ng-view" ng-view class=""></div>
   </body>
+
   <!-- Scripts -->
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="node_modules/moment/min/moment.min.js"></script>
+
   <script src="/node_modules/angular/angular.min.js"></script>
   <script src="/node_modules/angular-route/angular-route.min.js"></script>
+
+  <script type="text/javascript" src="node_modules/angular-ui-calendar/src/calendar.js"></script>
+  <script type="text/javascript" src="node_modules/fullcalendar/dist/fullcalendar.min.js"></script>
+  <script type="text/javascript" src="node_modules/fullcalendar/dist/gcal.js"></script>
+
   <script src="/views/weekly_view/weekly_view.js"></script>
   <script src="/index.js"></script>
+
 </html>
