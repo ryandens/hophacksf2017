@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var firebase = require("firebase");
 var local_variables = require("./local_variables.js")
+var HardEvent = require("./models/hard_event.js")
 
 var app = express();
 
@@ -18,9 +19,5 @@ firebase.initializeApp(config);
 app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({extended: true}));
 
-// app.get("/", function(req, res) {
-//   //res.send("<h1>you are at the home page bruh<h1>");
-//   res.sendFile('index.html');
-// });
-
 app.listen("8080", console.log("Server has started on port 8080"));
+console.log((new HardEvent("title", "description", "location", "startTime", "endTime")).toString())
