@@ -44,4 +44,4 @@ console.log("spot on: " + alpha.getFunction(new Date(2013, 2, 1, 5, 10)));
 console.log("too late: " + alpha.getFunction(new Date(2013, 2, 1, 6, 10)));
 console.log("too early: " + alpha.getFunction(new Date(2013, 2, 1, 0, 10)));
 console.log("early buffer: " + alpha.getFunction(new Date(2013, 2, 1, 1, 6)));
-console.log("late buffer: " + alpha.getFunction(new Date(2013, 2, 1, 5, 24)));
+console.log("late buffer: " + alpha.getFunction(new Date(2013, 2, 1, 5, 14)));
