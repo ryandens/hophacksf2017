@@ -15,6 +15,6 @@
 		}])
 		.controller('weeklyViewController',[ function() {
 		    var vm = this;
-			vm.hello = 'Hello';
+			vm.hello = 'test';
 		}]);
 })();
