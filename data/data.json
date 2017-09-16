@@ -1,0 +1,32 @@
+{
+    "hard": [
+        {"title": "Prob Stat", "description": "Prob Stat Class", "location": "Schaffer Hall", "startTime": "Mon Sep 18 2017 11:00:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 11:50:00 GMT-0500 (STD)"},
+        {"title": "Prob Stat", "description": "Prob Stat Class", "location": "Schaffer Hall", "startTime": "Wed Sep 20 2017 11:00:00 GMT-0500 (STD)", "endTime": "Wed Sep 20 2017 11:50:00 GMT-0500 (STD)"},
+        {"title": "Prob Stat", "description": "Prob Stat Class", "location": "Schaffer Hall", "startTime": "Thu Sep 22 2017 11:00:00 GMT-0500 (STD)", "endTime": "Thu Sep 22 2017 11:50:00 GMT-0500 (STD)"}
+        {"title": "Prob Stat Section", "description": "Prob Stat Section", "location": "Hodson Hall", "startTime": "Tue Sep 19 2017 15:00:00 GMT-0500 (STD)", "endTime": "Tue Sep 19 2017 15:50:00 GMT-0500 (STD)"},
+        {"title": "Practical Cryptographic Systems", "description": "Practical Crypto Class", "location": "Ames Hall", "startTime": "Mon Sep 18 2017 12:00:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 12:50:00 GMT-0500 (STD)"},
+        {"title": "Practical Cryptographic Systems", "description": "Practical Crypto Class", "location": "Ames Hall", "startTime": "Wed Sep 20 2017 12:00:00 GMT-0500 (STD)", "endTime": "Wed Sep 20 2017 12:50:00 GMT-0500 (STD)"},
+        {"title": "Practical Cryptographic Systems", "description": "Practical Crypto Class", "location": "Ames Hall", "startTime": "Fri Sep 22 2017 12:00:00 GMT-0500 (STD)", "endTime": "Fri Sep 22 2017 12:50:00 GMT-0500 (STD)"},
+        {"title": "Good Vibrations", "description": "Good Vibratons Class", "location": "Hodson Hall", "startTime": "Tue Sep 19 2017 10:30:00 GMT-0500 (STD)", "endTime": "Tue Sep 19 2017 11:45:00 GMT-0500 (STD)"},
+        {"title": "Good Vibrations", "description": "Good Vibratons Class", "location": "Maryland Hall", "startTime": "Thu Sep 21 2017 10:30:00 GMT-0500 (STD)", "endTime": "Thu Sep 21 2017 11:45:00 GMT-0500 (STD)"},
+        {"title": "CS Innovation & Entrepreneurship", "description": "CSIE Class", "location": "Malone Hall", "startTime": "Tue Sep 19 2017 16:30:00 GMT-0500 (STD)", "endTime": "Tue Sep 19 2017 17:45:00 GMT-0500 (STD)"},
+        {"title": "CS Innovation & Entrepreneurship", "description": "CSIE Class", "location": "Malone Hall", "startTime": "Thu Sep 21 2017 16:30:00 GMT-0500 (STD)", "endTime": "Thu Sep 21 2017 17:45:00 GMT-0500 (STD)"},
+        {"title": "Work", "description": "Work", "location": "3600 O'Donnel St Baltimore, MD", "startTime": "Wed Sep 20 2017 13:45:00 GMT-0500 (STD)", "endTime": "Wed Sep 20 2017 18:00:00 GMT-0500 (STD)"},
+        {"title": "Work", "description": "Work", "location": "3600 O'Donnel St Baltimore, MD", "startTime": "Thu Sep 21 2017 12:15:00 GMT-0500 (STD)", "endTime": "Thu Sep 21 2017 18:00:00 GMT-0500 (STD)"},
+        {"title": "Work", "description": "Work", "location": "3600 O'Donnel St Baltimore, MD", "startTime": "Thu Sep 21 2017 12:30:00 GMT-0500 (STD)", "endTime": "Thu Sep 21 2017 18:00:00 GMT-0500 (STD)"}
+    ],
+    "constraint": [
+        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Sun Sep 17 2017 23:45:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 8:00:00 GMT-0500 (STD)","priority": 2},
+        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Mon Sep 18 2017 23:45:00 GMT-0500 (STD)", "endTime": "Tue Sep 19 2017 8:00:00 GMT-0500 (STD)","priority": 2},
+        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Tue Sep 19 2017 23:45:00 GMT-0500 (STD)", "endTime": "Wed Sep 20 2017 8:00:00 GMT-0500 (STD)","priority": 2},
+        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Wed Sep 20 2017 23:45:00 GMT-0500 (STD)", "endTime": "Thu Sep 21 2017 2017 8:00:00 GMT-0500 (STD)","priority": 2},
+        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Thu Sep 21 2017 23:45:00 GMT-0500 (STD)", "endTime": "Fri Sep 22 2017 8:00:00 GMT-0500 (STD)","priority": 2},
+        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Fri Sep 22 2017 23:45:00 GMT-0500 (STD)", "endTime": "Sat Sep 23 2017 8:00:00 GMT-0500 (STD)","priority": 2},
+        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Sat Sep 23 2017 23:45:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 8:00:00 GMT-0500 (STD)","priority": 2},
+        {"title": "Fun Stuff", "description": "party", "location": "", "startTime": "Sat Sep 23 2017 23:45:00 GMT-0500 (STD)", "endTime": "Fri Sep 22 2017 :00:00 GMT-0500 (STD)","priority": 1}
+
+    ],
+    "flex" : [
+        
+    ]
+ }
