@@ -5,6 +5,7 @@ var local_variables = require("./local_variables.js");
 var HardEvent = require("./models/hard_event.js");
 var Constraint = require("./models/constraint.js");
 var FlexEvent = require("./models/flex_event.js")
+var Schedule = require("./models/schedule.js")
 
 var app = express();
 
@@ -28,3 +29,12 @@ console.log("\nConstraint");
 console.log((new Constraint("title", "description", "location", new Date(2013, 2, 1, 1, 10), new Date(2013, 2, 1, 5, 10), "priority")).toString());
 console.log("\nFlex Event");
 console.log((new FlexEvent("title", "description", "location", 4, 2, new Date(2013, 2, 1, 1, 10))).toString());
+
+var a = new HardEvent("1", "description1", "location", new Date(2013, 2, 1, 1, 10), new Date(2013, 2, 1, 5, 10));
+var b = new HardEvent("2", "description2", "location", new Date(2014, 2, 1, 1, 10), new Date(2014, 2, 1, 5, 10));
+var c = new HardEvent("3", "description3", "location", new Date(2015, 2, 1, 1, 10), new Date(2015, 2, 1, 5, 10));
+var d = new HardEvent("4", "description4", "location", new Date(2016, 2, 1, 1, 10), new Date(2016, 2, 1, 5, 10));
+var e = new HardEvent("5", "description5", "location", new Date(2017, 2, 1, 1, 10), new Date(2017, 2, 1, 5, 10));
+
+var arr = [a, b, c, d, e]
+console.log((new Schedule("schedule title", 1, arr)).toString());
