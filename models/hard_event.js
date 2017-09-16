@@ -14,18 +14,18 @@ class HardEvent extends BaseEvent {
         return result;
     }
 
-    getFunction(x) {
-      const BUFFER_TIME = 15; //mins
-      const MILLISECOND = 60 * 1000;
-      if (x < moment(this.startTime).subtract(BUFFER_TIME, "m").toDate() || x > moment(this.endTime).add(BUFFER_TIME, "m").toDate()) {
+    getFunction(start, end) {
+      const CONST = 1;
+      if (end < this.startTime || start > (this.endTime)) {
         return 0;
-      } else if (x >= moment(this.startTime).subtract(BUFFER_TIME, "m").toDate() && x < this.startTime) {
-        return BUFFER_TIME * MILLISECOND - (this.startTime - x);
-      } else if (x <= moment(this.endTime).add(BUFFER_TIME, "m").toDate() && x > this.endTime) {
-        return BUFFER_TIME * MILLISECOND - (x - this.endTime);
-      } else {
-        return BUFFER_TIME * MILLISECOND;
       }
+      if (start < this.startTime) {
+        start = this.startTime;
+      }
+      if (end > this.endTime) {
+        end = this.endTime;
+      }
+      return (end - start) * CONST
     }
 }
 
