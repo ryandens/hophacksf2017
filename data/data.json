@@ -24,9 +24,13 @@
         {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Fri Sep 22 2017 23:45:00 GMT-0500 (STD)", "endTime": "Sat Sep 23 2017 8:00:00 GMT-0500 (STD)","priority": 2},
         {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Sat Sep 23 2017 23:45:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 8:00:00 GMT-0500 (STD)","priority": 2},
         {"title": "Fun Stuff", "description": "party", "location": "", "startTime": "Sat Sep 23 2017 23:45:00 GMT-0500 (STD)", "endTime": "Fri Sep 22 2017 :00:00 GMT-0500 (STD)","priority": 1}
-
     ],
     "flex" : [
-        
+        {"title": "Prob Stat HW", "description": "", "location": "Malone", "length": 1, "eventConstraints": 1, "completeBy": "Thu Sep 21 2017 23:00 GMT-0500 (STD)"},
+        {"title": "Practical Crypto Pset", "description": "super hard", "length":5, "location": "Brody", "eventConstraints": 7, "completeBy": "Wed Sep 20 2017 12:00 GMT-0500 (STD)"},
+        {"title": "Good Vibrations Reading", "description": "trivial", "length":0.5, "location": "Home", "eventConstraints": 4, "completeBy": "Fri Sep 22 2017 16:00 GMT-0500 (STD)"},
+        {"title": "Work Prep", "description": "Meeting with Greg", "length":2, "location": "Home", "eventConstraints": 1, "completeBy": "Tue Sep 19 2017 8:00 GMT-0500 (STD)"},
+        {"title": "Job Application", "description": "Google and Fb app", "length":4.5, "location": "Library", "eventConstraints": 5, "completeBy": "Mon Sep 25 2017 20:00 GMT-0500 (STD)"},
+        {"title": "Power Nap", "description": "need my beauty sleep", "length":0.25, "location": "Random Housemate's Bed", "eventConstraints": 2, "completeBy": "Mon Sep 18 2017 16:00 GMT-0500 (STD)"},
     ]
  }
