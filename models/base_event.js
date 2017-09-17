@@ -8,11 +8,11 @@ class BaseEvent {
 
   toString() {
       var result = "Title: " + this.title + "\n" + "Type: " + this.type + "\n";
-      if ( this.description ) {
+      if ( this.description !== null ) {
           result += "Description: " + this.description + "\n";
       }
 
-      if ( this.location ) {
+      if ( this.location !== null ) {
           result += "Location: " + this.location;
       }
 
