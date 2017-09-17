@@ -1,52 +1,85 @@
 <!DOCTYPE html>
 <html ng-app="app">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="node_modules/fullcalendar/dist/fullcalendar.css"/>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="style.css" />
-    <title></title>
-  </head>
-  <body>
 
-      <!-- Button trigger modal -->
-    <button id="addTask" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add task!</button>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="node_modules/fullcalendar/dist/fullcalendar.css" />
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="style.css" />
+	<title></title>
+</head>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-          </div>
-          <div class="modal-body">
-              hi
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
+<body>
 
-    <div id="ng-view" ng-view class=""></div>
-  </body>
+	<!-- Button trigger modal -->
+	<button id="addTask" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add task!</button>
 
-  <!-- Scripts -->
-  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="node_modules/moment/min/moment.min.js"></script>
+	<!-- Modal -->
+	<div ng-controller="addTaskController as vm" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<form novalidate class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Add Task</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="title">Task Name:</label>
+						<input type="text" class="form-control" id="title" ng-model="vm.title">
+					</div>
+					<div class="form-group">
+						<label for="description">Description:</label>
+						<input type="text" class="form-control" id="description">
+					</div>
+					<div class="form-group">
+						<label for="location">Location:</label>
+						<input type="text" class="form-control" id="location">
+					</div>
+					<div class="form-group">
+						<label for="length">Length (hours):</label>
+						<input type="number" class="form-control" id="length">
+					</div>
+					<div class="form-group">
+						<label>Preferred Time of Day: </label>
+						<br/>
+						<input type="checkbox" id="morning"/>
+						<label>Morning</label>
+						<br/>
+						<input type="checkbox" id="afternoon"/>
+						<label>Afternoon</label>
+						<br/>
+						<input type="checkbox" id="evening"/>
+						<label>Evening</label>
+					</div>
+					<div class="form-group">
+						<label for="completeBy">Complete By:</label>
+						<input type="datetime-local" class="form-control" id="completeBy">
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary" ng-click="vm.onSubmit()">Save Task</button>
+				</div>
+			</form>
+		</div>
+	</div>
 
-  <script src="/node_modules/angular/angular.min.js"></script>
-  <script src="/node_modules/angular-route/angular-route.min.js"></script>
+	<div id="ng-view" ng-view class=""></div>
+</body>
 
-  <script type="text/javascript" src="node_modules/angular-ui-calendar/src/calendar.js"></script>
-  <script type="text/javascript" src="node_modules/fullcalendar/dist/fullcalendar.min.js"></script>
-  <script type="text/javascript" src="node_modules/fullcalendar/dist/gcal.js"></script>
-  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<!-- Scripts -->
+<script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/moment/min/moment.min.js"></script>
 
-  <script src="/views/weekly_view/weekly_view.js"></script>
-  <script src="/index.js"></script>
+<script src="/node_modules/angular/angular.min.js"></script>
+<script src="/node_modules/angular-route/angular-route.min.js"></script>
+
+<script type="text/javascript" src="node_modules/angular-ui-calendar/src/calendar.js"></script>
+<script type="text/javascript" src="node_modules/fullcalendar/dist/fullcalendar.min.js"></script>
+<script type="text/javascript" src="node_modules/fullcalendar/dist/gcal.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+<script src="/views/weekly_view/weekly_view.js"></script>
+<script src="/index.js"></script>
 
 </html>
