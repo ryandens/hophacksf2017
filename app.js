@@ -42,6 +42,7 @@ console.log((new Schedule("schedule title", 1, arr)).toString());
 var alpha = new HardEvent("title", "description", "location", new Date(2013, 2, 1, 1, 10), new Date(2013, 2, 1, 5, 10));
 
 console.log("spot on: " + alpha.getFunction(new Date(2013, 2, 1, 2, 20), new Date(2013, 2, 1, 5, 1)));
+console.log(alpha.toJSON());
 // console.log("too late : " + alpha.getFunction(new Date(2013, 2, 1, 2, 20), new Date(2013, 2, 1, 5, 1)));
 
 
