@@ -23,6 +23,7 @@ class Node {
         this.cumScore = this.parent.score + score;
         this.leftChild = null;
         this.rightChild = null;
+        return this
     }
 
     /**
@@ -30,6 +31,7 @@ class Node {
      */
     construcWithArray(schedule) {
         this.schedule = schedule;
+        return this
     }
 
 }
