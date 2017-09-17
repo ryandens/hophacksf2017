@@ -9,23 +9,26 @@ class ScheduleBuilderController {
         this.hardEvents = hardEvents;
         this.flexEvents = flexEvents;
         this.constraints = constraints;
+        this.scheduledEvents = [];
     }
     /**
      * build best schedules given hard, flex and constraint events.
      * @param hardEvents, @param flexEvents, @param constraints arrays of each type of event;
      */
     buildSchedules() {
-      var scheduledEvents = this.hardEvents.slice(0); //gets all hardEvents
+      this.scheduledEvents = this.hardEvents.slice(0); //gets all hardEvents
       this.constraints.forEach(function(constraint) {
         scheduledEvents.push(constraint);
       })
 
 
-      var rankedFlexEvents = flexEvents.sort(function(a, b) {
+      var rankedFlexEvents = this.flexEvents.sort(function(a, b) {
         return a.rank - b.rank;
       });
 
-      
+      rankedFlexEvents.forEach(function(event) {
+        fitFlexedEvents(event);
+      })
     }
 
     /**
@@ -33,12 +36,8 @@ class ScheduleBuilderController {
      * @param scheduledEvents @param flexEvent
      * @return one hard event (a fit flex event)
      */
-    fitFlexedEvents(scheduledEvents, flexEvent) {
-        var min = -1;
-        for (var j = 0; j < scheduledEvents.length; j++) {
-            var temp = 0;
-            temp += scheduledEvents[j].getFunction();
-        }
+    fitFlexedEvents(flexEvent) {
+
     }
 }
 
