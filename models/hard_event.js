@@ -50,6 +50,10 @@ class HardEvent extends BaseEvent {
         var height = CONST * (endFlex - startFlex) / (endHard - startHard);
         return (endFlex - startFlex) * height / 2;
     }
+
+    toJSON() {
+        return { start: this.startTime, end: this.endTime, title: this.title, type: this.type, description: this.description, location: this.location }
+    }
 }
 
 module.exports = HardEvent;
