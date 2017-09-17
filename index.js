@@ -3,6 +3,7 @@
 (function() {
     angular
         .module('app', ['ngRoute',
+            "ui.calendar",
             'app.weeklyView'
         ])
         .config(['$locationProvider', function($locationProvider) {

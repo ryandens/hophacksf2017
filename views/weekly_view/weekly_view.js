@@ -2,7 +2,7 @@
 
 (function () {
 	angular
-		.module('app.weeklyView', ['ngRoute'])
+		.module('app.weeklyView', ['ngRoute', 'ui.calendar'])
 		.config(['$routeProvider', function($routeProvider) {
             $routeProvider
 				.when('/', {
@@ -16,6 +16,38 @@
 		.controller('weeklyViewController',[ function() {
 		    var vm = this;
 			vm.hello = 'test';
+			vm.events = [];
+			vm.eventSources = [vm.events];
+			console.log(vm.eventSources);
+
+			/* config object */
+		    vm.uiConfig = {
+		      calendar:{
+		        height: 800,
+		        editable: true,
+		        header:{
+		          left: 'month agendaWeek agendaDay',
+		          center: 'title',
+		          right: 'today prev,next'
+		        },
+				defaultView: 'agendaWeek',
+		        dayClick: vm.alertEventOnClick,
+		        eventDrop: vm.alertOnDrop,
+		        eventResize: vm.alertOnResize
+		      }
+		    };
+
+			vm.alertEventOnClick = function() {
+				console.log("alertEventOnClick");
+			}
+
+			vm.eventDrop = function() {
+				console.log("event drop");
+			}
+
+			vm.eventResize = function() {
+				console.log("event resize");
+			}
 
 			var data = [
 			        {"title": "Prob Stat", "description": "Prob Stat Class", "location": "Schaffer Hall", "startTime": "Mon Sep 18 2017 11:00:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 11:50:00 GMT-0500 (STD)"},
@@ -67,12 +99,7 @@
 				}
 
 				result = result.sort(compareEvents);
-				partitionedResult = {}
 
-				// split array by day
-				for (var j = 0; j < result.length; j++) {
-
-				}
 
 
 			};
