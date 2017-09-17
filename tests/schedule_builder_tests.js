@@ -9,6 +9,8 @@ var hardEvents = HardEvent.fromJSON(data.hard);
 var constraints = Constraint.fromJSON(data.constraint);
 var flex = FlexEvent.fromJSON(data.flex);
 
+var x = new ScheduleBuilderController(hardEvents, flex, constraints);
+x.buildSchedules();
 console.log(hardEvents.length);
 console.log(constraints);
 console.log(flex);

@@ -17,9 +17,9 @@ class ScheduleBuilderController {
      */
     buildSchedules() {
       this.scheduledEvents = this.hardEvents.slice(0); //gets all hardEvents
-      this.constraints.forEach(function(constraint) {
-        scheduledEvents.push(constraint);
-      })
+      for(var i = 0; i < this.constraints.length; i++) {
+        this.scheduledEvents.push(this.constraints[i]);
+      }
 
 
       var rankedFlexEvents = this.flexEvents.sort(function(a, b) {
