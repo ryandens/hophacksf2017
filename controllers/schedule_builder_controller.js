@@ -40,13 +40,14 @@ class ScheduleBuilderController {
       var rankedEvents = [];
       flexEvents.forEach(function(event) {
         var date = new Date(moment().toDate() - event.completeBy);
-        var rank = (event.length - (date.getHours() / 24 * (Math.ceil(event.constraint / 3) + 1)));
+        var rank = (event.length - (date.getHours()) / 24) * (Math.ceil(event.constraint / 3) + 1)));
         rankedEvents.push({
           "event": event,
           "rank": rank
         })
       })
-      return rankedEvents;
+      rankedEvents.sort(function())
+
     }
 }
 
