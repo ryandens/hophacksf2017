@@ -25,6 +25,17 @@ class FlexEvent extends BaseEvent {
         return result;
     }
 
+    static fromJSON(json_array) {
+        var result = [];
+
+        for (var i = 0; i < json_array.length; i++) {
+            var curr_json = json_array[i];
+            result.push(new FlexEvent(curr_json.title, curr_json.description, curr_json.location, curr_json.length, curr_json.eventConstraints, new Date(curr_json.completeBy)));
+        }
+
+        return result;
+    }
+
     /**
      * Translates the integer eventConstraints into a stirng that represents the Event's preferences
      */

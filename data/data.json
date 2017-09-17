@@ -2,7 +2,7 @@
     "hard": [
         {"title": "Prob Stat", "description": "Prob Stat Class", "location": "Schaffer Hall", "startTime": "Mon Sep 18 2017 11:00:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 11:50:00 GMT-0500 (STD)"},
         {"title": "Prob Stat", "description": "Prob Stat Class", "location": "Schaffer Hall", "startTime": "Wed Sep 20 2017 11:00:00 GMT-0500 (STD)", "endTime": "Wed Sep 20 2017 11:50:00 GMT-0500 (STD)"},
-        {"title": "Prob Stat", "description": "Prob Stat Class", "location": "Schaffer Hall", "startTime": "Thu Sep 22 2017 11:00:00 GMT-0500 (STD)", "endTime": "Thu Sep 22 2017 11:50:00 GMT-0500 (STD)"}
+        {"title": "Prob Stat", "description": "Prob Stat Class", "location": "Schaffer Hall", "startTime": "Thu Sep 22 2017 11:00:00 GMT-0500 (STD)", "endTime": "Thu Sep 22 2017 11:50:00 GMT-0500 (STD)"},
         {"title": "Prob Stat Section", "description": "Prob Stat Section", "location": "Hodson Hall", "startTime": "Tue Sep 19 2017 15:00:00 GMT-0500 (STD)", "endTime": "Tue Sep 19 2017 15:50:00 GMT-0500 (STD)"},
         {"title": "Practical Cryptographic Systems", "description": "Practical Crypto Class", "location": "Ames Hall", "startTime": "Mon Sep 18 2017 12:00:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 12:50:00 GMT-0500 (STD)"},
         {"title": "Practical Cryptographic Systems", "description": "Practical Crypto Class", "location": "Ames Hall", "startTime": "Wed Sep 20 2017 12:00:00 GMT-0500 (STD)", "endTime": "Wed Sep 20 2017 12:50:00 GMT-0500 (STD)"},
@@ -31,6 +31,6 @@
         {"title": "Good Vibrations Reading", "description": "trivial", "length":0.5, "location": "Home", "eventConstraints": 4, "completeBy": "Fri Sep 22 2017 16:00 GMT-0500 (STD)"},
         {"title": "Work Prep", "description": "Meeting with Greg", "length":2, "location": "Home", "eventConstraints": 1, "completeBy": "Tue Sep 19 2017 8:00 GMT-0500 (STD)"},
         {"title": "Job Application", "description": "Google and Fb app", "length":4.5, "location": "Library", "eventConstraints": 5, "completeBy": "Mon Sep 25 2017 20:00 GMT-0500 (STD)"},
-        {"title": "Power Nap", "description": "need my beauty sleep", "length":0.25, "location": "Random Housemate's Bed", "eventConstraints": 2, "completeBy": "Mon Sep 18 2017 16:00 GMT-0500 (STD)"},
+        {"title": "Power Nap", "description": "need my beauty sleep", "length":0.25, "location": "Random Housemate's Bed", "eventConstraints": 2, "completeBy": "Mon Sep 18 2017 16:00 GMT-0500 (STD)"}
     ]
  }
