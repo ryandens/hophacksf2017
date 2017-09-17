@@ -32,8 +32,8 @@ class Constraint extends BaseEvent {
   */
   getFunction(start, end) {
       var midPoint = (this.endTime - this.startTime) / 2;
-      var areaOne = getTriangleArea(start, end, midPoint, this.endTime);
-      var areaTwo = getTriangleArea(start, end, this.startTime, midPoint);
+      var areaOne = this.getTriangleArea(start, end, midPoint, this.endTime);
+      var areaTwo = this.getTriangleArea(start, end, this.startTime, midPoint);
       return areaOne + areaTwo;
   }
 

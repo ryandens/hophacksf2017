@@ -16,9 +16,9 @@ class HardEvent extends BaseEvent {
 
     getFunction(start, end) {
       const BUFFER = 15 * 60 * 1000;
-      var rectangle = getRectangleArea(start, end);
-      var triangleOne = getTriangleArea(start, end, this.startTime - BUFFER, this.startTime);
-      var triangleTwo = getTriangleArea(start, end, this.endTime, this.endTime + BUFFER);
+      var rectangle = this.getRectangleArea(start, end);
+      var triangleOne = this.getTriangleArea(start, end, this.startTime - BUFFER, this.startTime);
+      var triangleTwo = this.getTriangleArea(start, end, this.endTime, this.endTime + BUFFER);
       return rectangle + triangleOne + triangleTwo;
     }
 
