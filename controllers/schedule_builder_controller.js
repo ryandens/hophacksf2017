@@ -20,7 +20,12 @@ class ScheduleBuilderController {
         scheduledEvents.push(constraint);
       })
 
-      var rankedFlexEvents = this.rank(this.flexEvents);
+
+      var rankedFlexEvents = flexEvents.sort(function(a, b) {
+        return a.rank - b.rank;
+      });
+
+      
     }
 
     /**
@@ -34,20 +39,6 @@ class ScheduleBuilderController {
             var temp = 0;
             temp += scheduledEvents[j].getFunction();
         }
-    }
-
-    rank(flexEvents) {
-      var rankedEvents = [];
-      flexEvents.forEach(function(event) {
-        var date = new Date(moment().toDate() - event.completeBy);
-        var rank = (event.length - (date.getHours()) / 24) * (Math.ceil(event.constraint / 3) + 1)));
-        rankedEvents.push({
-          "event": event,
-          "rank": rank
-        })
-      })
-      rankedEvents.sort(function())
-
     }
 }
 
