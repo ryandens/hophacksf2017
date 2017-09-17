@@ -4,7 +4,7 @@
   "description": "Time management application",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/schedule_builder_tests.js",
+    "test": "node tests/*.js",
     "start": "node app.js"
   },
   "repository": {
