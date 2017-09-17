@@ -1,8 +1,22 @@
 class Node {
+
+    /**
+     * Constructor for creating a root node out of many events
+     * @param schedule is the array of HardEvent
+     */
+    constructor() {
+        this.newEvent = null;
+        this.parent = null;
+        this.schedule = null;
+        this.cumScore = 0;
+        this.leftChild = null;
+        this.rightChild = null;
+    }
+
     /**
      * Create a node out of @param newEvent and @param score with @param parent
      */
-    constructor(newEvent, score, parent) {
+    constructWithParent(newEvent, score, parent) {
         this.newEvent = newEvent;
         this.parent = parent;
         this.schedule = this.parent.schedule.push(this.newEvent);
@@ -12,28 +26,12 @@ class Node {
     }
 
     /**
-     * Constructor for creating a root node (no parent)
-     * with value @param newEvent and @param score as its cumScore
+     * Constructor for root node with array of hard events as schedule
      */
-    constructor(newEvent) {
-        this.parent = null;
-        this.schedule = [this.newEvent];
-        this.cumScore = 0;
-        this.leftChild = null;
-        this.rightChild = null;
+    construcWithArray(schedule) {
+        this.schedule = schedule;
     }
 
-    /**
-     * Constructor for creating a root node out of many events
-     * @param schedule is the array of HardEvent
-     */
-    constructor(schedule) {
-        this.parent = null;
-        this.schedule = schedule;
-        this.cumScore = 0;
-        this.leftChild = null;
-        this.rightChild = null;
-    }
 }
 
 class Tree {
@@ -56,4 +54,9 @@ class Tree {
             parentNode.rightChild = node;
         }
     }
+}
+
+module.exports = {
+  Tree : Tree,
+  Node : Node
 }
