@@ -1,3 +1,6 @@
+var TreeAndNode = require("../models/tree.js")
+var Tree = TreeAndNode.Tree;
+var Node = TreeAndNode.Node;
 var HardEvent = require("../models/hard_event.js");
 var Constraint = require("../models/constraint.js");
 var FlexEvent = require("../models/flex_event.js");
@@ -26,7 +29,8 @@ class ScheduleBuilderController {
         return a.rank - b.rank;
       });
 
-      var rootNode = new node(this.scheduledEvents);
+      var rootNode = new Node();
+      rootNode = rootNode.construcWithArray(this.scheduledEvents)
       var tree = new Tree(rootNode);
       var lastLevelNodes = rootNode;
       rankedFlexEvents.forEach(function(event) {
@@ -60,8 +64,10 @@ class ScheduleBuilderController {
         var minTime2 = myMap.get(keys[1]);
         var event1 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, minTime1, minTime1 + flexEvent.length);
         var event2 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, minTime2, minTime2 + flexEvent.length);
-        var node1 = new node(event1, node, minCost1);
-        var node2 = new node(event2, node, minCost2);
+        var node1 = new Node();
+        node1 = node1.constructWithParent(event1, node, minCost1)
+        var node2 = new Node(event2, node, minCost2);
+        node2 = node2.constructWithParent(event2, node, minCost2)
         tree.insert(node1, node);
         tree.insert(node2, node);
         newLastNodes.push(node1);
