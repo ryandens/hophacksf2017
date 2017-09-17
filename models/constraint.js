@@ -27,6 +27,17 @@ class Constraint extends BaseEvent {
     return result;
   }
 
+  static fromJSON(json_array) {
+      var result = [];
+
+      for (var i = 0; i < json_array.length; i++) {
+          var curr_json = json_array[i];
+          result.push(new Constraint(curr_json.title, curr_json.description, curr_json.location, new Date(curr_json.startTime), new Date(curr_json.endTime)), curr_json.priority);
+      }
+
+      return result;
+  }
+
   /**
     area under curve for one triangle
   */

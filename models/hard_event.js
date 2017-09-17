@@ -51,6 +51,18 @@ class HardEvent extends BaseEvent {
         return (endFlex - startFlex) * height / 2;
     }
 
+
+    static fromJSON(json_array) {
+        var result = [];
+
+        for (var i = 0; i < json_array.length; i++) {
+            var curr_json = json_array[i];
+            result.push(new HardEvent(curr_json.title, curr_json.description, curr_json.location, new Date(curr_json.startTime), new Date(curr_json.endTime)));
+        }
+
+        return result;
+    }
+
     toJSON() {
         return { start: this.startTime, end: this.endTime, title: this.title, type: this.type, description: this.description, location: this.location }
     }
