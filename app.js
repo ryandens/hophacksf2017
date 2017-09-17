@@ -6,7 +6,6 @@ var HardEvent = require("./models/hard_event.js");
 var Constraint = require("./models/constraint.js");
 var FlexEvent = require("./models/flex_event.js")
 var Schedule = require("./models/schedule.js")
-var ScheduleBuilderController = require("./models/schedule_builder_controller.js")
 
 var app = express();
 
