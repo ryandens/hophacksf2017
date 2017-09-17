@@ -19,6 +19,7 @@ class Node {
     constructWithParent(newEvent, score, parent) {
         this.newEvent = newEvent;
         this.parent = parent;
+        console.log(this.parent);
         this.schedule = this.parent.schedule.push(this.newEvent);
         this.cumScore = this.parent.score + score;
         this.leftChild = null;

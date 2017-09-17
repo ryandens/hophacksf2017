@@ -64,9 +64,9 @@ class ScheduleBuilderController {
         var event1 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, minTime1, minTime1 + flexEvent.length);
         var event2 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, minTime2, minTime2 + flexEvent.length);
         var node1 = new Node();
-        node1 = node1.constructWithParent(event1, node, minCost1)
-        var node2 = new Node(event2, node, minCost2);
-        node2 = node2.constructWithParent(event2, node, minCost2)
+        node1 = node1.constructWithParent(event1, minCost1, node)
+        var node2 = new Node();
+        node2 = node2.constructWithParent(event2, minCost2, node)
         tree.insert(node1, node);
         tree.insert(node2, node);
         newLastNodes.push(node1);
