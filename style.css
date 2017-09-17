@@ -1,0 +1,13 @@
+#addTask {
+    float: right;
+    background-color: green;
+    margin: 0 10px;
+}
+
+.fc-toolbar {
+    margin-top: 10px;
+}
+
+.fc-left {
+    margin-left: 10px;
+}
