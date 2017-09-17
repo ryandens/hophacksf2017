@@ -1,4 +1,5 @@
 var BaseEvent = require("./base_event.js")
+var moment = require('moment');
 
 class FlexEvent extends BaseEvent {
 
@@ -14,6 +15,7 @@ class FlexEvent extends BaseEvent {
         this.length = length;
         this.eventConstraints = eventConstraints;
         this.completeBy = completeBy;
+        this.rank = ((this.length - ((this.completeBy - moment().toDate()) / (60*60*1000) / 24)) * (Math.ceil(this.eventConstraints / 3) + 1));
     }
 
     toString() {
