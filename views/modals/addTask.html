@@ -13,31 +13,31 @@
 				</div>
 				<div class="form-group">
 					<label for="description">Description:</label>
-					<input type="text" class="form-control" id="description">
+					<input type="text" class="form-control" id="description" ng-model="vm.description">
 				</div>
 				<div class="form-group">
 					<label for="location">Location:</label>
-					<input type="text" class="form-control" id="location">
+					<input type="text" class="form-control" id="location" ng-model="vm.location">
 				</div>
 				<div class="form-group">
 					<label for="length">Length (hours):</label>
-					<input type="number" class="form-control" id="length">
+					<input type="number" class="form-control" id="length" ng-model="vm.length">
 				</div>
 				<div class="form-group">
 					<label>Preferred Time of Day: </label>
 					<br/>
-					<input type="checkbox" id="morning"/>
+					<input type="checkbox" id="morning" ng-model="vm.morning"/>
 					<label>Morning</label>
 					<br/>
-					<input type="checkbox" id="afternoon"/>
+					<input type="checkbox" id="afternoon" ng-model="vm.afternoon"/>
 					<label>Afternoon</label>
 					<br/>
-					<input type="checkbox" id="evening"/>
+					<input type="checkbox" id="evening" ng-model="vm.evening"/>
 					<label>Evening</label>
 				</div>
 				<div class="form-group">
 					<label for="completeBy">Complete By:</label>
-					<input type="datetime-local" class="form-control" id="completeBy">
+					<input type="datetime-local" class="form-control" id="completeBy" ng-model="vm.completeBy">
 				</div>
 			</div>
 			<div class="modal-footer">
