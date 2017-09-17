@@ -6,6 +6,7 @@ var HardEvent = require("./models/hard_event.js");
 var Constraint = require("./models/constraint.js");
 var FlexEvent = require("./models/flex_event.js")
 var Schedule = require("./models/schedule.js")
+var ScheduleBuilderController = require("./models/schedule_builder_controller.js")
 
 var app = express();
 
@@ -42,10 +43,3 @@ console.log((new Schedule("schedule title", 1, arr)).toString());
 var alpha = new HardEvent("title", "description", "location", new Date(2013, 2, 1, 1, 10), new Date(2013, 2, 1, 5, 10));
 
 console.log("spot on: " + alpha.getFunction(new Date(2013, 2, 1, 2, 20), new Date(2013, 2, 1, 5, 1)));
-// console.log("too late : " + alpha.getFunction(new Date(2013, 2, 1, 2, 20), new Date(2013, 2, 1, 5, 1)));
-
-
-// console.log("too late: " + alpha.getFunction(new Date(2013, 2, 1, 6, 10)));
-// console.log("too early: " + alpha.getFunction(new Date(2013, 2, 1, 0, 10)));
-// console.log("early buffer: " + alpha.getFunction(new Date(2013, 2, 1, 1, 6)));
-// console.log("late buffer: " + alpha.getFunction(new Date(2013, 2, 1, 5, 14)));

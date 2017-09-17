@@ -26,8 +26,11 @@ class ScheduleBuilderController {
         return a.rank - b.rank;
       });
 
+      var rootNode = new node(this.scheduledEvents);
+      var tree = new Tree(rootNode);
+      var lastLevelNodes = rootNode;
       rankedFlexEvents.forEach(function(event) {
-        fitFlexedEvents(event);
+        fitFlexedEvents(lastLevelNodes, tree, event);
       })
     }
 
@@ -36,11 +39,30 @@ class ScheduleBuilderController {
      * @param scheduledEvents @param flexEvent
      * @return one hard event (a fit flex event)
      */
-    fitFlexedEvents(flexEvent) {
-
+    fitFlexedEvents(lastLevelNodes, tree, flexEvent) {
+      var newLastNodes = [];
+      lastLevelNodes.forEach(function(node) {
+        var arrayOfSum;
+          for (var i = moment(); i.toData() < flexEvent.completeBy; i.add(5,"m")) {
+            var sumCosts = 0;
+            for (var j = 0; j < node.scheduledEvents.length; j++) {
+              sumCosts += node.scheduledEvents[j].getFunction(i.toDate(), i.add(flexEvent.length, "h").toDate());
+            }
+            arrayOfSum.push(sumCosts);
+          }
+        var min1 = getMin1(arrayOfSum);
+        var min2 = getMin2(arrayOfSum);
+        var event1 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, min1, min1 + flexEvent.length);
+        var event2 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, min2, min2 + flexEvent.length);
+        var node1 = new node(event1, node, min2);
+        var node2 = new node(event2, node, min2);
+        tree.insert(node1, node);
+        tree.insert(node2, node);
+        newLastNodes.push(node1);
+        newLastNodes.push(node2);
+      });
+    lastLevelNodes = newLastNodes.slice(0);
     }
 }
-
-
 
 module.exports = ScheduleBuilderController;
