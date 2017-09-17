@@ -28,11 +28,28 @@ class Constraint extends BaseEvent {
   }
 
   /**
-    method that generates a function that models the availbality of time during
-    constraint. Based on this.priority and this.startTime/endTime;
+    area under curve for one triangle
   */
-  generateFunction() {
-    return 2;
+  getFunction(start, end) {
+      var midPoint = (this.endTime - this.startTime) / 2;
+      var areaOne = this.getTriangleArea(start, end, midPoint, this.endTime);
+      var areaTwo = this.getTriangleArea(start, end, this.startTime, midPoint);
+      return areaOne + areaTwo;
+  }
+
+  getTriangleArea(startFlex, endFlex, startHard, endHard) {
+      const CONST = 1;
+      if (endFlex < startHard || startFlex > endHard) {
+        return 0;
+      }
+      if (startFlex < startHard) {
+        startFlex = startHard;
+      }
+      if (endFlex > endHard) {
+        endFlex = endHard;
+      }
+      var height = CONST * (endFlex - startFlex) / (endHard - startHard);
+      return (endFlex - startFlex) * height / 2;
   }
 }
 
