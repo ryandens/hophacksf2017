@@ -16,7 +16,7 @@
         {"title": "Work", "description": "Work", "location": "3600 O'Donnel St Baltimore, MD", "startTime": "Thu Sep 21 2017 12:30:00 GMT-0500 (STD)", "endTime": "Thu Sep 21 2017 18:00:00 GMT-0500 (STD)"}
     ],
     "constraint": [
-        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Sun Sep 17 2017 23:45:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 8:00:00 GMT-0500 (STD)","priority": 2},
+        {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Sun Sep 17 2017 23:45:00 GMT-0500 (STD)", "endTime": "Mon Sep 18 2017 8:00:00 GMT-0500 (STD)", "priority": 2},
         {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Mon Sep 18 2017 23:45:00 GMT-0500 (STD)", "endTime": "Tue Sep 19 2017 8:00:00 GMT-0500 (STD)","priority": 2},
         {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Tue Sep 19 2017 23:45:00 GMT-0500 (STD)", "endTime": "Wed Sep 20 2017 8:00:00 GMT-0500 (STD)","priority": 2},
         {"title": "Sleep", "description": "sleep", "location": "bed", "startTime": "Wed Sep 20 2017 23:45:00 GMT-0500 (STD)", "endTime": "Thu Sep 21 2017 2017 8:00:00 GMT-0500 (STD)","priority": 2},
