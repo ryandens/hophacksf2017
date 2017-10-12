@@ -16,7 +16,7 @@ var date1 = moment().add(1, "d");
 var date2 = moment().add(1, "h")
 var fEvent2 = new FlexEvent("TITLE_2", "DESCRIPTION_2", "LOCATION_2", 0.5, 1, date1);
 var fEvent3 = new FlexEvent("TITLE_3", "DESCRIPTION_3", "LOCATION_3", 0.5, 2, date2);
-var fEvent4 = new FlexEvent("TITLE_4", "DESCRIPTION_4", "LOCATION_4", "LENGTH_4", 3, "COMPLETE_4");
+var fEvent4 = new FlexEvent("TITLE_4", "DESCRIPTION_4", "LOCATION_4", 1, 3, date2);
 var fEvent5 = new FlexEvent("TITLE_5", "DESCRIPTION_5", "LOCATION_5", "LENGTH_5", 4, "COMPLETE_5");
 var fEvent6 = new FlexEvent("TITLE_6", "DESCRIPTION_6", "LOCATION_6", "LENGTH_6", 5, "COMPLETE_6");
 var fEvent7 = new FlexEvent("TITLE_7", "DESCRIPTION_7", "LOCATION_7", "LENGTH_7", 6, "COMPLETE_7");
@@ -29,7 +29,9 @@ assert.equal(fEvent6.eventConstraintsToString(), "Event time preference: afterno
 assert.equal(fEvent7.eventConstraintsToString(), "Event time preference: morning or night", "check eventConstraintsToString function")
 assert.equal(fEvent8.eventConstraintsToString(), "Event time preference: morning, afternoon, or night", "check eventConstraintsToString function")
 
-assert.isBelow(fEvent2.rank, fEvent3.rank);
+assert.isBelow(fEvent2.rank, fEvent3.rank, "Rank is first if complete date is before other");
+assert.isBelow(fEvent3.rank, fEvent4.rank, "Rank is first if length is longer other");
+
 
 
 console.log("All Tests for FlexEvent passed");
