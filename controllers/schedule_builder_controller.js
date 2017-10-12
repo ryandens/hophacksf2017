@@ -67,8 +67,8 @@ class ScheduleBuilderController {
         node1 = node1.constructWithParent(event1, minCost1, node)
         var node2 = new Node();
         node2 = node2.constructWithParent(event2, minCost2, node)
-        tree.insert(node1, node);
-        tree.insert(node2, node);
+        tree.insertNode(node1, node);
+        tree.insertNode(node2, node);
         newLastNodes.push(node1);
         newLastNodes.push(node2);
       });

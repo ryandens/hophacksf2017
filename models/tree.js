@@ -19,12 +19,11 @@ class Node {
     constructWithParent(newEvent, score, parent) {
         this.newEvent = newEvent;
         this.parent = parent;
-        console.log(this.parent);
-        this.schedule = this.parent.schedule.push(this.newEvent);
+        this.schedule = this.parent.schedule.slice().push(this.newEvent);
         this.cumScore = this.parent.score + score;
         this.leftChild = null;
         this.rightChild = null;
-        return this
+        return this;
     }
 
     /**
@@ -50,6 +49,7 @@ class Tree {
      */
     insertNode(node, parentNode) {
         if (parentNode.leftChild !== null && parentNode.rightChild !== null) {
+            console.log(parentNode);
             throw "Node is full, can't add new child!"
         } else if (parentNode.leftChild == null) {
             parentNode.leftChild = node;
