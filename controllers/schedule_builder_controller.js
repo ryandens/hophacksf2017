@@ -33,7 +33,7 @@ class ScheduleBuilderController {
       var tree = new Tree(rootNode);
       var lastLevelNodes = [rootNode];
       rankedFlexEvents.forEach(function(event) {
-        ScheduleBuilderController.fitFlexedEvents(lastLevelNodes, tree, event);
+        lastLevelNodes = ScheduleBuilderController.fitFlexedEvents(lastLevelNodes, tree, event);
       })
     }
 
@@ -72,7 +72,8 @@ class ScheduleBuilderController {
         newLastNodes.push(node1);
         newLastNodes.push(node2);
       });
-    lastLevelNodes = newLastNodes.slice(0);
+      lastLevelNodes = newLastNodes.slice(0);
+      return lastLevelNodes
     }
 }
 
