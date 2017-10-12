@@ -4,7 +4,7 @@
   "description": "Time management application",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/*.js",
+    "test": "./node_modules/.bin/multi-tape test/*.js",
     "start": "node app.js"
   },
   "repository": {
@@ -27,5 +27,9 @@
     "fullcalendar": "^3.5.1",
     "jquery": "^3.2.1",
     "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "multi-tape": "^1.1.1"
   }
 }

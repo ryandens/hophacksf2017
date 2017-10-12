@@ -57,14 +57,14 @@ class FlexEvent extends BaseEvent {
                 return result += "night"
                 break;
             case 4:
-                return result += "morning or afteroon"
+                return result += "morning or afternoon"
                 break;
             case 5:
-                return result += "afternoon or evening"
+                return result += "afternoon or night"
                 break;
 
             case 6:
-                return result += "morning or evening"
+                return result += "morning or night"
                 break;
 
             case 7:
