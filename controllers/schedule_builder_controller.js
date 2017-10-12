@@ -13,6 +13,7 @@ class ScheduleBuilderController {
         this.flexEvents = flexEvents;
         this.constraints = constraints;
         this.scheduledEvents = [];
+        this.tree = null;
     }
     /**
      * build best schedules given hard, flex and constraint events.
@@ -25,15 +26,20 @@ class ScheduleBuilderController {
       }
 
       var rankedFlexEvents = this.flexEvents.sort(function(a, b) {
-        return a.rank - b.rank;
+        return b.rank - a.rank;
       });
+
+    //   rankedFlexEvents.forEach(function(event) {
+    //       console.log(event);
+    //       console.log(event.rank);
+    //   });
 
       var rootNode = new Node();
       rootNode = rootNode.construcWithArray(this.scheduledEvents)
-      var tree = new Tree(rootNode);
+      this.tree = new Tree(rootNode);
       var lastLevelNodes = [rootNode];
       rankedFlexEvents.forEach(function(event) {
-        lastLevelNodes = ScheduleBuilderController.fitFlexedEvents(lastLevelNodes, tree, event);
+        lastLevelNodes = ScheduleBuilderController.fitFlexedEvents(lastLevelNodes, event);
       })
     }
 
@@ -42,33 +48,38 @@ class ScheduleBuilderController {
      * @param scheduledEvents @param flexEvent
      * @return one hard event (a fit flex event)
      */
-    static fitFlexedEvents(lastLevelNodes, tree, flexEvent) {
-      var newLastNodes = [];
-      lastLevelNodes.forEach(function(node) {
-        var myMap = new Map();
-          for (var i = moment(); i.toDate() < flexEvent.completeBy; i.add(5,"m")) {
-            var sumCosts = 0;
-            for (var j = 0; j < node.schedule.length; j++) {
-              sumCosts += node.schedule[j].getFunction(i.toDate(), i.add(flexEvent.length, "h").toDate());
+    static fitFlexedEvents(lastLevelNodes, flexEvent) {
+        var newLastNodes = [];
+        var count = 0;
+        lastLevelNodes.forEach(function(node) {
+            var myMap = new Map();
+            for (var i = moment("09/17/2017", "MM-DD-YYYY"); i.toDate() < flexEvent.completeBy; i.add(5,"m")) {
+                var sumCosts = 0;
+                for (var j = 0; j < node.schedule.length; j++) {
+                  var newCost = node.schedule[j].getFunction(i.toDate(), moment(i).add(flexEvent.length, "h").toDate());
+                  sumCosts += newCost;
+                }
+                myMap.set(sumCosts, i);
+                count++;
             }
-            myMap.set(sumCosts, i.toDate());
-          }
-        var myMap = new Map([...myMap.entries()].sort(function(a,b) {
-          return a - b;
-        }));
+            var myMap = new Map([...myMap.entries()].sort(function(a,b) {
+              return a - b;
+            }
+        ));
         let keys = Array.from( myMap.keys() )
+        
         var minCost1 = keys[0];
         var minCost2 = keys[1];
-        var minTime1 = myMap.get(keys[0]);
-        var minTime2 = myMap.get(keys[1]);
-        var event1 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, minTime1, minTime1 + flexEvent.length);
-        var event2 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, minTime2, minTime2 + flexEvent.length);
+        var minTime1 = myMap.get(minCost1);
+        var minTime2 = myMap.get(minCost2);
+        var event1 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, minTime1.toDate(), minTime1.add(flexEvent.length, "h").toDate());
+        var event2 = new HardEvent(flexEvent.title, flexEvent.description, flexEvent.location, minTime2.toDate(), minTime2.add(flexEvent.length, "h").toDate());
         var node1 = new Node();
         node1 = node1.constructWithParent(event1, minCost1, node)
         var node2 = new Node();
         node2 = node2.constructWithParent(event2, minCost2, node)
-        tree.insertNode(node1, node);
-        tree.insertNode(node2, node);
+        node.leftChild = node1;
+        node.rightChild = node2;
         newLastNodes.push(node1);
         newLastNodes.push(node2);
       });
